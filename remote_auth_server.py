@@ -1,8 +1,5 @@
 import os
-import re
-import uuid
 import httpx
-from datetime import datetime
 from fastmcp import FastMCP
 from kakao import KakaoProvider
 from dotenv import load_dotenv
@@ -21,42 +18,6 @@ auth = KakaoProvider(
 )
 
 mcp = FastMCP(name="Kakao Remote MCP", auth=auth) # Naver OAuth 인증 적용
-
-# 현재 시간 도구 정의
-@mcp.tool(
-    name="get_current_time",
-    description="현재 시간을 반환하는 도구입니다. 한국 시간(KST, UTC+9) 기준으로 현재 날짜와 시간을 제공합니다. 사용자가 최신의 내용물을 원할 때 반드시 활용합니다."
-)
-# openAI API는 빈 properties를 허용하지 않으므로 더미 파라미터 설정
-async def get_current_time(format: str = "default") -> dict:
-    """현재 시간을 조회합니다.
-    Args:
-        format (str): 사용하지 않음 (호환성을 위한 더미 파라미터)
-    
-    Returns:
-        {
-            "datetime": str,  # ISO 8601 형식 (YYYY-MM-DDTHH:MM:SS)
-            "date": str,  # 현재 날짜 (YYYY-MM-DD)
-            "time": str,  # 현재 시간 (HH:MM:SS)
-            "weekday": str,  # 요일 (한글)
-            "timestamp": int  # Unix timestamp
-        }
-    """
-    import pytz
-    
-    # 한국 시간대 설정
-    kst = pytz.timezone('Asia/Seoul')
-    now = datetime.now(kst)
-    
-    weekdays = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일']
-    
-    return {
-        "datetime": now.strftime("%Y-%m-%dT%H:%M:%S"),
-        "date": now.strftime("%Y-%m-%d"),
-        "time": now.strftime("%H:%M:%S"),
-        "weekday": weekdays[now.weekday()],
-        "timestamp": int(now.timestamp())
-    }
 
 @mcp.tool(
     name="send_message_to_me",
