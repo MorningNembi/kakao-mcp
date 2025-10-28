@@ -3,8 +3,8 @@
 카카오 OAuth 인증을 통해 카카오톡 메시지 발송 및 친구 목록 조회 기능을 제공하는 FastMCP 기반 MCP 서버입니다.  
 MCP 서버를 연결하면 자동으로 카카오 로그인 페이지로 리다이렉트 됩니다. 로그인과 권한 부여를 통해 에이전트에서 카카오톡 메세지를 전달 할 수 있습니다.  
 
-<img width="500" height="700" alt="image" src="https://github.com/user-attachments/assets/fda081d5-e378-48bc-bbee-c443f7599365" />
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/cf3114cf-1587-454c-bd22-76ddaca945e3" />
+<img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/fda081d5-e378-48bc-bbee-c443f7599365" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/cf3114cf-1587-454c-bd22-76ddaca945e3" />
 
 
 ## 🎯 Tool List
@@ -154,3 +154,4 @@ FastMCP 서버를 실행한 후, Claude Desktop 등 MCP 클라이언트의 설�
 ✅ **반응형 HTML**: 모바일/데스크톱 모두 최적화  
 ✅ **환경변수 토큰 관리**: 동의 후 토큰 자동 저장/사용  
 ✅ **OIDC 준수**: 카카오 OAuth 표준 구현
+
