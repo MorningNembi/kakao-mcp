@@ -1,0 +1,7 @@
+fastmcp==2.12.4
+mcp==1.15.0
+langchain-naver==0.1.1
+langchain==0.3.27
+langgraph==0.6.7
+pytz==2025.2
+python-dotenv==1.1.1
